@@ -30,6 +30,7 @@ SECRET_KEY = "django-insecure-&gfa&6^d6u*$nvm^hm5etvhz28_0mbqqv6-&og4o1e1t$=x!=3
 DEBUG = False
 
 ALLOWED_HOSTS = ["*"]
+CSRF_TRUSTED_ORIGINS = ["https://blogapp-production-29bc.up.railway.app","http://127.0.0.1:8000"]
 
 
 # Application definition
@@ -93,25 +94,45 @@ DB_LIVE = getenv("DB_LIVE")
 #     }
 # }
 
-if DB_LIVE is ["False", False]:
+# if DB_LIVE is ["False", False]:
+#     DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.sqlite3",
+#         "NAME": BASE_DIR / "db.sqlite3",
+#     }
+# }
+# else:
+#     DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.postgresql",
+#         "NAME": getenv("DB_NAME"),
+#         "USER": getenv("DB_USER"),
+#         "PASSWORD": getenv("DB_PASSWORD"),
+#         "HOST": getenv("DB_HOST"),
+#         "PORT": getenv("DB_PORT"), 
+#     }
+# }
+
+DB_LIVE = getenv("DB_LIVE", "False")
+
+if DB_LIVE == "False":
     DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "default": {
+            "ENGINE": "django.db.backends.sqlite3",
+            "NAME": BASE_DIR / "db.sqlite3",
+        }
     }
-}
 else:
     DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": getenv("DB_NAME"),
-        "USER": getenv("DB_USER"),
-        "PASSWORD": getenv("DB_PASSWORD"),
-        "HOST": getenv("DB_HOST"),
-        "PORT": getenv("DB_PORT"), 
+        "default": {
+            "ENGINE": "django.db.backends.postgresql",
+            "NAME": getenv("DB_NAME"),
+            "USER": getenv("DB_USER"),
+            "PASSWORD": getenv("DB_PASSWORD"),
+            "HOST": getenv("DB_HOST"),
+            "PORT": getenv("DB_PORT"),
+        }
     }
-}
-
 
 # Password validation
 # https://docs.djangoproject.com/en/6.0/ref/settings/#auth-password-validators
