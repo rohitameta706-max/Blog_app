@@ -36,6 +36,8 @@ CSRF_TRUSTED_ORIGINS = ["https://spectacular-simplicity-production-9565.up.railw
 # Application definition
 
 INSTALLED_APPS = [
+    "cloudinary_storage",
+    "cloudinary",
     "blog",
     "django.contrib.admin",
     "django.contrib.auth",
@@ -55,6 +57,14 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
+
+CLOUDINARY_STORAGE = {
+    "CLOUD_NAME":getenv("CLOUDINARY_CLOUD_NAME"),
+    "API_KEY": getenv("CLOUDINARY_API_KEY"),
+    "API_SECRET": getenv("CLOUDINARY_API_SECRET"),
+}
+
+# DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
 
 ROOT_URLCONF = "my_site.urls"
 
@@ -134,6 +144,15 @@ else:
         }
     }
 
+STORAGES = {
+    "default": {
+        "BACKEND": "cloudinary_storage.storage.MediaCloudinaryStorage",
+    },
+    "staticfiles": {
+        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+    },
+}
+
 # Password validation
 # https://docs.djangoproject.com/en/6.0/ref/settings/#auth-password-validators
 
@@ -169,7 +188,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
 STATIC_ROOT= BASE_DIR / "staticfiles"
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+# STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 STATIC_URL = "static/"
 
