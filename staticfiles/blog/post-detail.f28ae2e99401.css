@@ -1,0 +1,339 @@
+body {
+  background-color: #e7e7e7;
+}
+
+#main-navigation {
+  background-color: #390281;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+#summary {
+  margin: 8rem auto 3rem auto;
+  padding: 2rem;
+  width: 90%;
+  max-width: 90rem;
+  border-radius: 16px;
+  background-color: #5706c0;
+  position: relative;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  height: 22rem;
+}
+
+#summary h2 {
+  color: white;
+  font-size: 4.5rem;
+  margin-bottom: 0.25rem;
+}
+
+#summary article {
+  position: absolute;
+  top: 2rem;
+  right: 3rem;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  text-align: right;
+  color: white;
+}
+
+#summary article img {
+  width: 12rem;
+  height: 12rem;
+  border-radius: 12px;
+  transform: rotateZ(5deg);
+  border: 5px solid white;
+  margin-bottom: 1rem;
+}
+
+#summary address {
+  font-weight: bold;
+}
+
+#summary time {
+  font-weight: bold;
+} 
+
+#summary a{
+  color: white;
+  text-decoration: none;
+}
+
+#read-later{
+  margin: 2rem 0;
+
+}
+#read-later button{
+  background-color: transparent;
+  border:1px solid white;
+  padding: 0.5rem 2rem;
+  font: inherit;
+  color: white;
+}
+#read-later button:hover,
+#read-later button:active{
+  cursor: pointer;
+  color:#390281;
+  background-color: white;
+
+}
+
+main {
+  width: 90%;
+  max-width: 90rem;
+  margin: 3rem auto;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+.tag{
+  background-color: white;
+  color: #390281;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+}
+
+#comment-form{
+  margin: 3px auto;
+  padding: 1rem;
+  width: 90%;
+  max-width: 35rem;
+  border-radius: 12px;
+  background-color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+.form-control {
+  margin-bottom: 1rem;
+}
+
+.form-control label{
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.form-control input,
+.form-control textarea{
+  display: block;
+  width: 100%;
+  font: inherit;
+  padding: 0.25rem;
+  border-radius: 6px;
+  border: 1px solid lightgray;
+}
+
+#comment-form button{
+  font: inherit;
+  background-color: #5706c0;
+  border: 1px solid #390281;
+  padding: 0.5rem 1.5rem;
+  border-radius: 6px;
+}
+#comment-form button:hover,
+#comment-form button:active{
+  background-color: #9d5df2;
+}
+
+.errorlist{
+  list-style: none;
+  margin: 0.5rem 0;
+  padding: 0;
+  color: rgb(230, 74, 74);
+
+}
+.invalid label{
+  color: #d6000b;
+}
+
+.invalid input,
+.invalid textarea{
+  border-color: #d6000b;
+  background-color: #fc8086;
+}
+#alert {
+  margin: 8rem auto 3rem auto;
+  border: 1px solid #d6000b;
+  background-color: #ffe6e7;
+  padding: 1rem;
+  width: 90%;
+  max-width: 40rem;
+}
+
+#alert a {
+  text-decoration: none;
+  border: 1px solid #d6000b;
+  background-color: #d6000b;
+  color: white;
+  padding: 0.25rem 1.5rem;
+  border-radius: 6px;
+}
+
+#comments {
+  margin: 3px auto;
+  padding: 1rem 2rem;
+  width: 90%;
+  max-width: 40rem;
+  border-radius: 12px;
+  background-color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+#comments ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#comments li{
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #ccc;
+}
+#comments li:last-of-type{
+  border-bottom: none;
+}
+#comments h2{
+  color: #4a4747;
+}
+/* ===========================
+   Tablet (768px and below)
+=========================== */
+@media (max-width: 768px) {
+  #summary {
+    height: auto;
+    padding: 2rem;
+    text-align: center;
+  }
+
+  #summary h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  #summary article {
+    position: static;
+    text-align: center;
+    margin-top: 2rem;
+    padding: 0;
+  }
+
+  #summary article img {
+    width: 10rem;
+    height: 10rem;
+    transform: rotate(0deg);
+  }
+
+  .tag {
+    display: inline-block;
+    margin: 0.3rem;
+  }
+
+  main {
+    width: 95%;
+    padding: 1.5rem;
+  }
+
+  #comment-form {
+    width: 95%;
+    max-width: 35rem;
+  }
+
+  .form-control input,
+  .form-control textarea {
+    font-size: 1rem;
+  }
+}
+
+/* ===========================
+   Mobile (480px and below)
+=========================== */
+@media (max-width: 480px) {
+  #summary {
+    margin-top: 6rem;
+    padding: 1.5rem;
+    width: 95%;
+    height: auto;
+  }
+
+  #summary h2 {
+    font-size: 2rem;
+    line-height: 1.3;
+  }
+
+  #summary article {
+    position: static;
+    text-align: center;
+    margin-top: 1.5rem;
+    padding: 0;
+  }
+
+  #summary article img {
+    width: 8rem;
+    height: 8rem;
+    transform: rotate(0deg);
+    margin-bottom: 1rem;
+  }
+
+  #summary address,
+  #summary time {
+    font-size: 0.9rem;
+  }
+
+  .tag {
+    display: inline-block;
+    margin: 0.25rem;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+  }
+
+  main {
+    width: 95%;
+    padding: 1rem;
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  #comment-form {
+    width: 95%;
+    max-width: 100%;
+    padding: 1rem;
+  }
+
+  .form-control input,
+  .form-control textarea {
+    font-size: 1rem;
+    padding: 0.6rem;
+  }
+
+  #comment-form button {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+}
+
+/* ===========================
+   Very Small Phones (320px)
+=========================== */
+@media (max-width: 320px) {
+  #summary h2 {
+    font-size: 1.7rem;
+  }
+
+  #summary article img {
+    width: 6.5rem;
+    height: 6.5rem;
+  }
+
+  main {
+    font-size: 0.95rem;
+  }
+
+  .tag {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.6rem;
+  }
+
+  #comment-form button {
+    font-size: 0.9rem;
+  }
+}
