@@ -30,7 +30,7 @@ SECRET_KEY = "django-insecure-&gfa&6^d6u*$nvm^hm5etvhz28_0mbqqv6-&og4o1e1t$=x!=3
 DEBUG = False
 
 ALLOWED_HOSTS = ["*"]
-CSRF_TRUSTED_ORIGINS = ["https://blogapp-production-29bc.up.railway.app","http://127.0.0.1:8000"]
+CSRF_TRUSTED_ORIGINS = ["https://spectacular-simplicity-production-9565.up.railway.app","https://blogapp-production-29bc.up.railway.app","http://127.0.0.1:8000"]
 
 
 # Application definition
